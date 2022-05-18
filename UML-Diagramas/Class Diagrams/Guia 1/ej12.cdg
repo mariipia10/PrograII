@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="ej12">
+  <ClassDiagramComponents>
+    <Class name="ImpresoraMonocromatica" package="" visibility="public" xPosition="114.0" yPosition="59.0">
+      <Fields>
+        <Field name="estaEncendida" type="boolean" visibility="private"/>
+        <Field name="cantHojas" type="int" visibility="private"/>
+        <Field name="nivelTinta" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="nivelSegunCantCaracteres" returnType="int" visibility="public">
+          <Argument type="int" name="cant"/>
+        </Method>
+        <Method name="recargarBandeja" returnType="void" visibility="public">
+          <Argument type="int" name="hojas"/>
+        </Method>
+        <Method name="imprimir" returnType="void" visibility="public">
+          <Argument type="Documento" name="docu"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Documento" package="" visibility="public" xPosition="541.0" yPosition="78.0">
+      <Fields>
+        <Field name="fecha" type="Fecha" visibility="private"/>
+        <Field name="cuerpo" type="String" visibility="private"/>
+        <Field name="titulo" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Fecha" name="fecha"/>
+          <Argument type="String" name="cuerpo"/>
+          <Argument type="String" name="titulo"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Fecha" package="" visibility="public" xPosition="598.0" yPosition="324.0">
+      <Fields>
+        <Field name="dia" type="int" visibility="private"/>
+        <Field name="mes" type="int" visibility="private"/>
+        <Field name="anio" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="dia"/>
+          <Argument type="int" name="mes"/>
+          <Argument type="int" name="anio"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation name="" source="ImpresoraMonocromatica" target="Documento" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="-fecha" source="Documento" target="Fecha" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

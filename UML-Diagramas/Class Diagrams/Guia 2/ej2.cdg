@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="ej2">
+  <ClassDiagramComponents>
+    <Class name="Inmobiliara" package="" visibility="public" xPosition="231.0" yPosition="89.0">
+      <Fields>
+        <Field name="propiedades" type="ArrayList" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="promedioDePrecio" returnType="float" visibility="public"/>
+        <Method name="propiedadesMasEconomicas" returnType="ArrayList" visibility="public"/>
+        <Method name="cantidadDePropiedadesSegunTipo" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Enum name="Barrio" package="" visibility="public" xPosition="524.0" yPosition="308.0">
+      <Literals>
+        <Literal name="RECOLETA"/>
+        <Literal name="PALERMO"/>
+        <Literal name="BELGRANO"/>
+      </Literals>
+    </Enum>
+    <Class name="Propiedad" package="" visibility="public" xPosition="273.0" yPosition="293.0">
+      <Fields>
+        <Field name="domicilio" type="String" visibility="private"/>
+        <Field name="precio" type="Float" visibility="private"/>
+        <Field name="barrio" type="Enum" visibility="private"/>
+        <Field name="tipo" type="Enum" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Enum name="TipoPropiedad" package="" visibility="public" xPosition="42.0" yPosition="308.0">
+      <Literals>
+        <Literal name="DEPARTAMENTO"/>
+        <Literal name="CASA"/>
+        <Literal name="PH"/>
+      </Literals>
+    </Enum>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="propiedades" source="Inmobiliara" target="Propiedad" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="ArrayList"/>
+    <HasRelation name="barrio" source="Propiedad" target="Barrio" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="tipo" source="Propiedad" target="TipoPropiedad" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

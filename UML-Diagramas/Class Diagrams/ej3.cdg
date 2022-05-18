@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="ej3">
+  <ClassDiagramComponents>
+    <Class name="Curso" package="" visibility="public" xPosition="47.0" yPosition="143.0">
+      <Fields>
+        <Field name="codigo" type="String" visibility="private"/>
+        <Field name="titulo" type="String" visibility="private"/>
+        <Field name="duracion" type="int" visibility="private"/>
+        <Field name="Alumnos" type="Arraylist" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="buscarAlumnosPorEncimaDe" returnType="ArrayList" visibility="public">
+          <Argument type="double" name="promedio"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Alumno" package="" visibility="public" xPosition="440.0" yPosition="153.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="DNI" type="String" visibility="private"/>
+        <Field name="Evaluaciones" type="ArrayList" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="calcularPromedio" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Evaluacion" package="" visibility="public" xPosition="440.0" yPosition="368.0">
+      <Fields>
+        <Field name="nota" type="Int" visibility="private"/>
+        <Field name="tipo" type="Enum" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Enum name="Tipo" package="" visibility="public" xPosition="675.0" yPosition="360.0">
+      <Literals>
+        <Literal name="PRIMERO"/>
+        <Literal name="SEGUNDO"/>
+        <Literal name="FINAL"/>
+      </Literals>
+    </Enum>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="alumnos" source="Curso" target="Alumno" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="ArrayList"/>
+    <HasRelation name="evaluaciones" source="Alumno" target="Evaluacion" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="ArrayList"/>
+    <HasRelation name="tipo" source="Evaluacion" target="Tipo" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="ej13">
+  <ClassDiagramComponents>
+    <Class name="Posnet" package="" visibility="public" xPosition="158.0" yPosition="156.0">
+      <Fields>
+        <Field name="untitledField" type="Object" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="saldoSuficiente" returnType="boolean" visibility="public"/>
+        <Method name="Ticket" returnType="void" visibility="public"/>
+        <Method name="efectuarPago" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TarjetaCredito" package="" visibility="public" xPosition="402.0" yPosition="165.0">
+      <Fields>
+        <Field name="nombreBanco" type="String" visibility="private"/>
+        <Field name="numero" type="String" visibility="private"/>
+        <Field name="saldo" type="float" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Titular" package="" visibility="public" xPosition="664.0" yPosition="184.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="apellido" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Fecha" package="" visibility="public" xPosition="646.0" yPosition="358.0">
+      <Fields>
+        <Field name="dia" type="int" visibility="private"/>
+        <Field name="mes" type="int" visibility="private"/>
+        <Field name="anio" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="dia"/>
+          <Argument type="int" name="mes"/>
+          <Argument type="int" name="anio"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Domicilio" package="" visibility="public" xPosition="664.0" yPosition="-9.0">
+      <Fields>
+        <Field name="calle" type="String" visibility="private"/>
+        <Field name="altura" type="String" visibility="private"/>
+        <Field name="barrio" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Enum name="EntidadFinanciera" package="" visibility="public" xPosition="402.0" yPosition="358.0">
+      <Literals>
+        <Literal name="VISA"/>
+        <Literal name="MASTERCARD"/>
+        <Literal name="MAESTRO"/>
+      </Literals>
+    </Enum>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="fechaNac" source="Titular" target="Fecha" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="titular" source="TarjetaCredito" target="Titular" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="Posnet" target="TarjetaCredito" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="domicilio" source="Titular" target="Domicilio" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="entidadFinanciera" source="TarjetaCredito" target="EntidadFinanciera" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
