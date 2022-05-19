@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="ej4">
+  <ClassDiagramComponents>
+    <Class name="BMW" package="" visibility="public" xPosition="166.0" yPosition="109.0">
+      <Fields>
+        <Field name="consecionarias" type="ArrayList&lt;Concesionaria&gt;" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Concesionaria" package="" visibility="public" xPosition="197.0" yPosition="271.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="vehiculos" type="ArrayList&lt;Vehiculo&gt;" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Vehiculo" package="" visibility="public" xPosition="484.0" yPosition="261.0">
+      <Fields>
+        <Field name="patente" type="String" visibility="private"/>
+        <Field name="precio" type="Double" visibility="private"/>
+        <Field name="tipo" type="Enum" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Enum name="Tipo" package="" visibility="public" xPosition="484.0" yPosition="109.0">
+      <Literals>
+        <Literal name="AUTO"/>
+        <Literal name="CAMIONETA"/>
+        <Literal name="UTILITARIO"/>
+      </Literals>
+    </Enum>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="tipo" source="Vehiculo" target="Tipo" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="concesionarias" source="BMW" target="Concesionaria" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="ArrayList"/>
+    <HasRelation name="vehiculos" source="Concesionaria" target="Vehiculo" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="ArrayList"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

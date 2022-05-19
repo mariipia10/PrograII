@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="ej3">
+  <ClassDiagramComponents>
+    <Class name="Alumno" package="ej3" visibility="public" xPosition="1.0" yPosition="53.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="DNI" type="String" visibility="private"/>
+        <Field name="evaluaciones" type="ArrayList&lt;Evaluacion&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nom"/>
+          <Argument type="String" name="DNI"/>
+          <Argument type="Enum" name="Tipo"/>
+          <Argument type="int" name="valor"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="nom"/>
+          <Argument type="String" name="DNI"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="agregarEvaluacion" returnType="void" visibility="public">
+          <Argument type="Enum" name="Tipo"/>
+          <Argument type="int" name="valor"/>
+        </Method>
+        <Method name="calcularPromedio" returnType="int" visibility="public"/>
+        <Method name="getDNI" returnType="String" visibility="public"/>
+        <Method name="buscarNota" returnType="Evaluacion" visibility="public">
+          <Argument type="Enum" name="tipo"/>
+        </Method>
+        <Method name="cantEval" returnType="int" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Curso" package="ej3" visibility="public" xPosition="412.0" yPosition="217.0">
+      <Fields>
+        <Field name="codigo" type="String" visibility="private"/>
+        <Field name="titulo" type="String" visibility="private"/>
+        <Field name="duracion" type="int" visibility="private"/>
+        <Field name="alumnos" type="ArrayList&lt;Alumno&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="codigo"/>
+          <Argument type="String" name="titulo"/>
+          <Argument type="int" name="duracion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="buscarAlum" returnType="Alumno" visibility="public">
+          <Argument type="String" name="DNI"/>
+        </Method>
+        <Method name="agregarAlum" returnType="boolean" visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="dni"/>
+          <Argument type="Enum" name="Tipo"/>
+          <Argument type="int" name="nota"/>
+        </Method>
+        <Method name="agregarNota" returnType="boolean" visibility="public">
+          <Argument type="Enum" name="tipo"/>
+          <Argument type="int" name="valor"/>
+          <Argument type="String" name="DNI"/>
+        </Method>
+        <Method name="buscarAlumnosPorEncimaDe" returnType="ArrayList" visibility="public">
+          <Argument type="int" name="promedio"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Evaluacion" package="ej3" visibility="public" xPosition="509.0" yPosition="20.0">
+      <Fields>
+        <Field name="nota" type="int" visibility="private"/>
+        <Field name="tipo" type="Enum" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="nota"/>
+          <Argument type="Enum" name="tipo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="getTipo" returnType="Enum" visibility="public"/>
+        <Method name="getNota" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Principal" package="ej3" visibility="public" xPosition="802.0" yPosition="33.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Enum name="Tipo" package="ej3" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Literals>
+        <Literal name="PRIMERO"/>
+        <Literal name="SEGUNDO"/>
+        <Literal name="FINAL"/>
+      </Literals>
+    </Enum>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="evaluaciones" source="ej3.Alumno" target="ej3.Evaluacion" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Evaluacion&gt;"/>
+    <HasRelation name="alumnos" source="ej3.Curso" target="ej3.Alumno" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Alumno&gt;"/>
+    <UseRelation source="ej3.Alumno" target="ej3.Evaluacion" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ej3.Curso" target="ej3.Alumno" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

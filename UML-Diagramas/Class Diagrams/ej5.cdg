@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="ej5">
+  <ClassDiagramComponents>
+    <Class name="Hotel" package="" visibility="public" xPosition="97.0" yPosition="138.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="direc" type="String" visibility="private"/>
+        <Field name="habitaciones" type="ArrayList&lt;Habitacion&gt;" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="untitledMethod" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Habitacion" package="" visibility="public" xPosition="405.0" yPosition="119.0">
+      <Fields>
+        <Field name="numero" type="String" visibility="private"/>
+        <Field name="precio" type="double" visibility="private"/>
+        <Field name="ocupada" type="boolean" visibility="private"/>
+        <Field name="nombreHuesped" type="String" visibility="private"/>
+        <Field name="diasHospedaje" type="int" visibility="private"/>
+        <Field name="adicionales" type="ArrayList&lt;Adicional&gt;" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="untitledMethod" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Enum name="Tipo" package="" visibility="public" xPosition="833.0" yPosition="163.0">
+      <Literals>
+        <Literal name="DESAYUNO"/>
+        <Literal name="ROOM_SERVICE"/>
+        <Literal name="TRASLADO"/>
+      </Literals>
+    </Enum>
+    <Class name="Adicional" package="" visibility="public" xPosition="651.0" yPosition="147.0">
+      <Fields>
+        <Field name="tipo" type="Enum" visibility="private"/>
+        <Field name="fechaPrestacion" type="Fecha" visibility="private"/>
+        <Field name="untitledField1" type="Object" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="adicionales" source="Habitacion" target="Adicional" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="ArrayList"/>
+    <HasRelation name="habitaciones" source="Hotel" target="Habitacion" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="ArrayList"/>
+    <HasRelation name="tipo" source="Adicional" target="Tipo" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
