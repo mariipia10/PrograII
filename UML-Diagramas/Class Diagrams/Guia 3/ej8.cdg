@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="ej8">
+  <ClassDiagramComponents>
+    <Class name="Empresa" package="" visibility="public" xPosition="339.0" yPosition="168.0">
+      <Fields>
+        <Field name="personal" type="ArrayList&lt;PersonalSalFijo&gt;" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="APP" package="" visibility="public" xPosition="372.0" yPosition="57.0">
+      <Fields>
+        <Field name="empresa" type="Empresa" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Personal" package="" visibility="public" xPosition="382.0" yPosition="303.0">
+      <Fields>
+        <Field name="DNI" type="String" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="ape" type="String" visibility="private"/>
+        <Field name="anioIngreso" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="PersonalComision" package="" visibility="public" xPosition="172.0" yPosition="285.0">
+      <Fields>
+        <Field name="salMinimo" type="double" visibility="private"/>
+        <Field name="clientesCaptados" type="int" visibility="private"/>
+        <Field name="montoClienteCaptado" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="PersonalSalFijo" package="" visibility="public" xPosition="181.0" yPosition="448.0">
+      <Fields>
+        <Field name="sueldoBasico" type="double" visibility="private"/>
+        <Field name="extraAntiguedad" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="untitledMethod" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="empresa" source="APP" target="Empresa" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="PersonalComision" target="Personal"/>
+    <IsRelation name="is" source="PersonalSalFijo" target="Personal"/>
+    <HasRelation name="personal" source="Empresa" target="Personal" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="ArrayList"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
