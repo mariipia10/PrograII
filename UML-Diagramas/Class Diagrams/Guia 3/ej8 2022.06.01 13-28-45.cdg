@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="ej8">
+  <ClassDiagramComponents>
+    <Class name="Empresa" package="ej8" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="personal" type="ArrayList&lt;Personal&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="agregarPersonal" returnType="void" visibility="public">
+          <Argument type="Personal" name="p"/>
+        </Method>
+        <Method name="mostrarSalarios" returnType="void" visibility="public"/>
+        <Method name="mejorVendedor" returnType="Personal" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Personal" package="ej8" visibility="public" isAbstract="true" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="DNI" type="String" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="ape" type="String" visibility="private"/>
+        <Field name="anioIngreso" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="DNI"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="ape"/>
+          <Argument type="int" name="anioIngreso"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="getSalario" returnType="double" visibility="public" isAbstract="true"/>
+        <Method name="mostrarSalario" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="PersonalComision" package="ej8" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="MONTO_MIN" type="double" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="MONTO_CLIENTE_CAPT" type="double" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="salMinimo" type="double" visibility="private"/>
+        <Field name="clientesCaptados" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="clientesCaptados"/>
+          <Argument type="String" name="DNI"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="ape"/>
+          <Argument type="int" name="anioIngreso"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getSalario" returnType="double" visibility="public"/>
+        <Method name="getCantClientes" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="PersonalSalFijo" package="ej8" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields>
+        <Field name="MONTO_BASICO" type="double" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="sueldoBasico" type="double" visibility="private"/>
+        <Field name="extraAntiguedad" type="double" visibility="private"/>
+        <Field name="aniosAntiguedad" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="DNI"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="ape"/>
+          <Argument type="int" name="anioIngreso"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="calcularExtra" returnType="void" visibility="private"/>
+        <Method name="getSalario" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Principal" package="ej8" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="ej8.PersonalSalFijo" target="ej8.Personal"/>
+    <IsRelation name="is" source="ej8.PersonalComision" target="ej8.Personal"/>
+    <HasRelation name="personal" source="ej8.Empresa" target="ej8.Personal" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Personal&gt;"/>
+    <UseRelation source="ej8.Empresa" target="ej8.Personal" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
