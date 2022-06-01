@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="ej3">
+  <ClassDiagramComponents>
+    <Class name="BarajaInglesa" package="" visibility="public" xPosition="540.0" yPosition="52.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="CartaPalo" package="" visibility="public" xPosition="626.0" yPosition="281.0">
+      <Fields>
+        <Field name="palo" type="Palo" visibility="private"/>
+        <Field name="valor" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="untitledMethod" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="CartasLiterales" package="" visibility="public" xPosition="740.0" yPosition="460.0">
+      <Fields>
+        <Field name="letra" type="Char" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="CartasNum" package="" visibility="public" xPosition="540.0" yPosition="471.0">
+      <Fields>
+        <Field name="num" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Enum name="Palo" package="" visibility="public" xPosition="833.0" yPosition="273.0">
+      <Literals>
+        <Literal name="TREBOL(Color NEGRO)"/>
+        <Literal name="DIAMANTE(Color ROJO)"/>
+        <Literal name="CORAZON(Color ROJO)"/>
+        <Literal name="PICA(Color NEGRO)"/>
+      </Literals>
+    </Enum>
+    <Class name="Joker" package="" visibility="public" xPosition="340.0" yPosition="300.0">
+      <Fields>
+        <Field name="color" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Carta" package="" visibility="public" xPosition="540.0" yPosition="166.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Enum name="Color" package="" visibility="public" xPosition="820.0" yPosition="135.0">
+      <Literals>
+        <Literal name="NEGRO"/>
+        <Literal name="ROJO"/>
+      </Literals>
+    </Enum>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="cartas" source="BarajaInglesa" target="Carta" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="ArrayList"/>
+    <IsRelation name="is" source="Joker" target="Carta"/>
+    <IsRelation name="is" source="CartaPalo" target="Carta"/>
+    <IsRelation name="is" source="CartasLiterales" target="CartaPalo"/>
+    <IsRelation name="is" source="CartasNum" target="CartaPalo"/>
+    <HasRelation name="palo" source="CartaPalo" target="Palo" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
