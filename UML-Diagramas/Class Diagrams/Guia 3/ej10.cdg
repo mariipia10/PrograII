@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="ej10">
+  <ClassDiagramComponents>
+    <Class name="Sophie" package="" visibility="public" xPosition="26.0" yPosition="36.0">
+      <Fields>
+        <Field name="programas" type="ArrayList&lt;Programa&gt;" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="programasPorDebajoDe" returnType="ArrayList&lt;Programa&gt;" visibility="public">
+          <Argument type="int" name="calidadMin"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Programa" package="" visibility="public" xPosition="57.0" yPosition="218.0">
+      <Fields>
+        <Field name="id" type="int" visibility="private"/>
+        <Field name="nom" type="String" visibility="private"/>
+        <Field name="nomResponsable" type="String" visibility="private"/>
+        <Field name="flag" type="boolean" visibility="private"/>
+        <Field name="fuentes" type="ArrayList&lt;Fuente&gt;" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="pasoPruebas" returnType="boolean" visibility="public"/>
+        <Method name="mostrarDetalleDeMetodo" returnType="void" visibility="public"/>
+        <Method name="listadoFuentesMayoresAlPromediode" returnType="ArrayList&lt;Fuente&gt;" visibility="public"/>
+        <Method name="getIndiceCalidad" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Fuente" package="" visibility="public" isAbstract="true" xPosition="416.0" yPosition="268.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="path" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="FuenteProgramacion" package="" visibility="public" xPosition="618.0" yPosition="286.0">
+      <Fields>
+        <Field name="metodos" type="ArrayList&lt;Metodo&gt;" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getIndiceCalidad" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="FuenteMarcado" package="" visibility="public" xPosition="416.0" yPosition="452.0">
+      <Fields>
+        <Field name="tamKB" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getIndiceCalidad" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Metodo" package="" visibility="public" xPosition="897.0" yPosition="229.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="params" type="int" visibility="private"/>
+        <Field name="cantInstrucciones" type="int" visibility="private"/>
+        <Field name="ramasFlujo" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getIndiceCalidad" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Interface name="Calificable" package="" visibility="public" xPosition="429.0" yPosition="47.0">
+      <Methods>
+        <Method name="getIndiceCalidad" returnType="int" visibility="public"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="fuentes" source="Programa" target="Fuente" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="ArrayList"/>
+    <HasRelation name="programas" source="Sophie" target="Programa" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="ArrayList"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Programa" target="Calificable"/>
+    <IsRelation name="is" source="FuenteMarcado" target="Fuente"/>
+    <HasRelation name="metodos" source="FuenteProgramacion" target="Metodo" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Metodo" target="Calificable"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Fuente" target="Calificable"/>
+    <IsRelation name="is" source="FuenteProgramacion" target="Fuente"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

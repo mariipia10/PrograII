@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="ej11">
+  <ClassDiagramComponents>
+    <Class name="Cliente" package="" visibility="public" xPosition="507.0" yPosition="454.0">
+      <Fields>
+        <Field name="ape" type="String" visibility="private"/>
+        <Field name="tel" type="String" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="notificar" returnType="void" visibility="public">
+          <Argument type="int" name="precioSuper"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Inmobiliaria" package="" visibility="public" xPosition="271.0" yPosition="487.0">
+      <Fields>
+        <Field name="comisionVenta" type="double" visibility="private"/>
+        <Field name="inmuebles" type="ArrayList&lt;Inmueble&gt;" visibility="private"/>
+        <Field name="untitledField" type="Object" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="notificar" returnType="void" visibility="public">
+          <Argument type="int" name="precioSuper"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Inmueble" package="" visibility="public" xPosition="109.0" yPosition="239.0">
+      <Fields>
+        <Field name="dom" type="String" visibility="private"/>
+        <Field name="superficie" type="int" visibility="private"/>
+        <Field name="ambientes" type="int" visibility="private"/>
+        <Field name="precio" type="int" visibility="private"/>
+        <Field name="interesados" type="ArrayList&lt;Interesado&gt;" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="setPrecio" returnType="void" visibility="public">
+          <Argument type="int" name="precioNuevo"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Interesado" package="" visibility="public" xPosition="385.0" yPosition="267.0">
+      <Fields>
+        <Field name="email" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="notificar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="UProp" package="" visibility="public" xPosition="221.0" yPosition="68.0">
+      <Fields>
+        <Field name="inmuebles" type="ArrayList&lt;Inmueble&gt;" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Interface name="UntitledInterface" package="" visibility="public" xPosition="510.0" yPosition="161.0">
+      <Methods/>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="interesados" source="Inmueble" target="Interesado" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="ArrayList"/>
+    <IsRelation name="is" source="Inmobiliaria" target="Interesado"/>
+    <HasRelation name="inmuebles" source="UProp" target="Inmueble" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="ArrayList"/>
+    <IsRelation name="is" source="Cliente" target="Interesado"/>
+    <HasRelation name="inmuebles" source="Inmobiliaria" target="Inmueble" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="ArrayList"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

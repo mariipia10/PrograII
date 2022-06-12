@@ -2,7 +2,7 @@
 
 <ClassDiagram name="ej8">
   <ClassDiagramComponents>
-    <Class name="Empresa" package="" visibility="public" xPosition="339.0" yPosition="168.0">
+    <Class name="Empresa" package="" visibility="public" xPosition="349.0" yPosition="183.0">
       <Fields>
         <Field name="personal" type="ArrayList&lt;PersonalSalFijo&gt;" visibility="private"/>
       </Fields>
@@ -26,7 +26,7 @@
       <Constructors/>
       <Methods/>
     </Class>
-    <Class name="PersonalComision" package="" visibility="public" xPosition="172.0" yPosition="285.0">
+    <Class name="PersonalComision" package="" visibility="public" xPosition="172.0" yPosition="312.0">
       <Fields>
         <Field name="salMinimo" type="double" visibility="private"/>
         <Field name="clientesCaptados" type="int" visibility="private"/>
@@ -35,7 +35,7 @@
       <Constructors/>
       <Methods/>
     </Class>
-    <Class name="PersonalSalFijo" package="" visibility="public" xPosition="181.0" yPosition="448.0">
+    <Class name="PersonalSalFijo" package="" visibility="public" xPosition="177.0" yPosition="486.0">
       <Fields>
         <Field name="sueldoBasico" type="double" visibility="private"/>
         <Field name="extraAntiguedad" type="int" visibility="private"/>
@@ -47,9 +47,9 @@
     </Class>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
-    <HasRelation name="empresa" source="APP" target="Empresa" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
-    <IsRelation name="is" source="PersonalComision" target="Personal"/>
     <IsRelation name="is" source="PersonalSalFijo" target="Personal"/>
+    <IsRelation name="is" source="PersonalComision" target="Personal"/>
+    <HasRelation name="empresa" source="APP" target="Empresa" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
     <HasRelation name="personal" source="Empresa" target="Personal" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="ArrayList"/>
   </ClassDiagramRelations>
 </ClassDiagram>
