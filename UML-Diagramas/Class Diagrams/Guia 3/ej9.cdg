@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="ej9">
+  <ClassDiagramComponents>
+    <Class name="Matematica" package="" visibility="public" xPosition="44.0" yPosition="15.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="sumarPorcentaje" returnType="double" visibility="public">
+          <Argument type="double" name="precio"/>
+          <Argument type="double" name="porcentaje"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Comercio" package="" visibility="public" xPosition="431.0" yPosition="-4.0">
+      <Fields>
+        <Field name="IVA" type="double" visibility="private"/>
+        <Field name="ventas" type="ArrayList&lt;Venta&gt;" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="montoTotalFacturado" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Venta" package="" visibility="public" xPosition="431.0" yPosition="157.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="montoTotalFacturado" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Insumo" package="" visibility="public" xPosition="276.0" yPosition="288.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="tipo" type="TipoInsumo" visibility="private"/>
+        <Field name="porcentajeGanancia" type="double" visibility="private"/>
+        <Field name="precioLista" type="double" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Servicio" package="" visibility="public" isAbstract="true" xPosition="569.0" yPosition="289.0">
+      <Fields>
+        <Field name="precio" type="double" visibility="private"/>
+        <Field name="tipo" type="TipoVenta" visibility="private"/>
+        <Field name="horas" type="int" visibility="private"/>
+        <Field name="valorHora" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Enum name="TipoInsumo" package="" visibility="public" xPosition="78.0" yPosition="303.0">
+      <Literals>
+        <Literal name="PERIFERICO"/>
+        <Literal name="HARDWARE"/>
+        <Literal name="LIMPIEZA"/>
+      </Literals>
+    </Enum>
+    <Enum name="TipoVenta" package="" visibility="public" xPosition="774.0" yPosition="322.0">
+      <Literals>
+        <Literal name="POST_VENTA"/>
+        <Literal name="PRE_VENTA"/>
+      </Literals>
+    </Enum>
+    <Class name="ServicioReparacion" package="" visibility="public" xPosition="472.0" yPosition="490.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="ServicioArmado" package="" visibility="public" xPosition="704.0" yPosition="490.0">
+      <Fields>
+        <Field name="dificultad" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="ServicioReparacion" target="Servicio"/>
+    <HasRelation name="ventas" source="Comercio" target="Venta" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="ArrayList"/>
+    <IsRelation name="is" source="ServicioArmado" target="Servicio"/>
+    <IsRelation name="is" source="Servicio" target="Venta"/>
+    <HasRelation name="Tipo" source="Servicio" target="TipoVenta" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Insumo" target="Venta"/>
+    <HasRelation name="tipo" source="Insumo" target="TipoInsumo" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="Comercio" target="Matematica" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
