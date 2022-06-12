@@ -1,4 +1,4 @@
-package ej9_bis;
+package eje9;
 
 public enum TipoInsumo {
 

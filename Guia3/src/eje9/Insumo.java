@@ -1,6 +1,6 @@
-package ej9_bis;
+package eje9;
 
-public class Insumo extends Venta {
+public class Insumo implements Facturable {
 
     private String nombre;
     private TipoInsumo tipo;
@@ -13,11 +13,12 @@ public class Insumo extends Venta {
         this.porcentajeGanancia = porcentajeGanancia;
         this.precioLista = precioLista;
     }
+
     
-    public double montoFacturado(){
-        return  Matematica.sumarPorcentaje(precioLista, porcentajeGanancia);
-                //Puedo utilizar sumarPorcentaje porque es una funcion ABSTRACTA
-                //Por ende no tengo que instanciar un objeto mate :D
+    @Override
+    public double montoFacturado() {
+        double precioGanancia = Matematica.sumarPorcentaje(precioLista, porcentajeGanancia);
+        return Matematica.sumarPorcentaje(precioGanancia, IVA);
     }
     
     

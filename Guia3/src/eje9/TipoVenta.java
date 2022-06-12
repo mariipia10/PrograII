@@ -1,4 +1,4 @@
-package ej9;
+package eje9;
 
 public enum TipoVenta {
 
